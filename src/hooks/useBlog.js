@@ -11,7 +11,7 @@ const useBlog = () => {
   const postNewBlog = (blogData) => {
     setIsLoading(true);
     try {
-      fetch('http://localhost:4000/blogs', {
+      fetch('https://fathomless-eyrie-68291.herokuapp.com/blogs', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -21,7 +21,7 @@ const useBlog = () => {
         admin
           ? toast('Blog posted successfully!')
           : toast('Post request sent for approval.');
-        setFetchBlogs(!fetchBlogs)
+        setFetchBlogs(!fetchBlogs);
       });
     } catch (error) {
       toast('Something went wrong! Please try again.');
@@ -33,7 +33,7 @@ const useBlog = () => {
   const approveBlog = (id) => {
     setIsLoading(true);
     try {
-      fetch(`http://localhost:4000/approveBlog/${id}`, {
+      fetch(`https://fathomless-eyrie-68291.herokuapp.com/approveBlog/${id}`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json',
@@ -53,7 +53,7 @@ const useBlog = () => {
     const confirmation = window.confirm('Are you sure you want to delete?');
     if (confirmation) {
       setIsLoading(true);
-      fetch(`http://localhost:4000/blog/${id}`, {
+      fetch(`https://fathomless-eyrie-68291.herokuapp.com/blog/${id}`, {
         method: 'DELETE',
         headers: { 'content-type': 'application/json' },
       })
@@ -62,7 +62,7 @@ const useBlog = () => {
           if (data.deletedCount) {
             setFetchBlogs(!fetchBlogs);
             setIsLoading(false);
-            toast('Blog deleted!')
+            toast('Blog deleted!');
           } else {
             return;
           }
@@ -72,7 +72,7 @@ const useBlog = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:4000/blogs`)
+    fetch(`https://fathomless-eyrie-68291.herokuapp.com/blogs`)
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
@@ -82,7 +82,7 @@ const useBlog = () => {
 
   //   const saveUsersToDb = (email, displayName, photoURL, method) => {
   //     const user = { email, displayName, photoURL, role: 'subscriber' };
-  //     fetch('http://localhost:4000/users', {
+  //     fetch('https://fathomless-eyrie-68291.herokuapp.com/users', {
   //       method: method,
   //       headers: {
   //         'content-type': 'application/json',

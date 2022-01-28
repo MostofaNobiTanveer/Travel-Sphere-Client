@@ -141,7 +141,7 @@ const useAuth = () => {
 
   useEffect(() => {
     setAdminLoading(true);
-    fetch(`http://localhost:4000/users/${user.email}`)
+    fetch(`https://fathomless-eyrie-68291.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data.admin);
@@ -165,7 +165,7 @@ const useAuth = () => {
 
   const saveUsersToDb = (email, displayName, photoURL, method) => {
     const user = { email, displayName, photoURL };
-    fetch('http://localhost:4000/users', {
+    fetch('https://fathomless-eyrie-68291.herokuapp.com/users', {
       method: method,
       headers: {
         'content-type': 'application/json',

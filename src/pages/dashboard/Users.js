@@ -11,7 +11,7 @@ const Users = () => {
     e.preventDefault();
     const user = { email };
     setLoading(true);
-    fetch('http://localhost:4000/users/admin', {
+    fetch('https://fathomless-eyrie-68291.herokuapp.com/users/admin', {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -29,7 +29,7 @@ const Users = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:4000/users')
+    fetch('https://fathomless-eyrie-68291.herokuapp.com/users')
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
@@ -113,7 +113,10 @@ const Users = () => {
           <ul className="mx-auto grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {users.map(({ _id, email, displayName, photoURL, role }) => {
               return (
-                <li key={_id} className="bg-white p-4 rounded-lg shadow-xl shadow-sky-100">
+                <li
+                  key={_id}
+                  className="bg-white p-4 rounded-lg shadow-xl shadow-sky-100"
+                >
                   <div className="space-y-20">
                     <div className="space-y-2 border-l-4 border-sky-400 rounded -ml-4">
                       <div className="truncate font-medium pl-2 text-xs">

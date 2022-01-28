@@ -12,7 +12,7 @@ const SingleBlogPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:4000/blogs/${id}`)
+    fetch(`https://fathomless-eyrie-68291.herokuapp.com/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBlog(data);

@@ -11,7 +11,7 @@ const DashboardHome = () => {
   const [users, setUsers] = useState([]);
   const { user, adminLoading } = useAuthContext();
   useEffect(() => {
-    fetch('http://localhost:4000/users')
+    fetch('https://fathomless-eyrie-68291.herokuapp.com/users')
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
