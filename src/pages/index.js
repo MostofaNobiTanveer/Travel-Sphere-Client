@@ -1,0 +1,10 @@
+export { default as AddBlogPage } from './AddBlogPage';
+export { default as SingleBlogPage } from './SingleBlogPage';
+export { default as HomePage } from './HomePage';
+export { default as LoginPage } from './user/LoginPage';
+export { default as RegisterPage } from './user/RegisterPage';
+export { default as CompleteRegister } from './user/CompleteRegister';
+export { default as Dashboard } from './dashboard/Dashboard';
+export { default as DashboardHome } from './dashboard/Home';
+export { default as DashboardUsers } from './dashboard/Users';
+export { default as DashboardBlogs } from './dashboard/Blogs';
