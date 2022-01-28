@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useBlogContext } from '../../contexts/BlogProvider';
 
 const Blogs = () => {
@@ -36,6 +37,9 @@ const Blogs = () => {
                     Status
                   </th>
                   <th scope="col" className="relative px-6 py-3">
+                    <span className="sr-only">View</span>
+                  </th>
+                  <th scope="col" className="relative px-6 py-3">
                     <span className="sr-only">Delete</span>
                   </th>
                 </tr>
@@ -64,6 +68,14 @@ const Blogs = () => {
                             {isLoading ? 'Loading' : 'Approve'}
                           </button>
                         )}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <Link
+                          to={`/blogs/${blog._id}`}
+                          className="text-sky-500 hover:text-sky-700"
+                        >
+                          View
+                        </Link>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <button

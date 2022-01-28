@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
+import { BsArrowRight } from 'react-icons/bs';
 import ScrollToTop from '../utils/ScrollToTop';
 import Rating from '../utils/Rating';
 
@@ -31,6 +32,17 @@ const SingleBlogPage = () => {
         <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
         <div className="mx-auto border-b pb-6 text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
           <div>
+            {!blog.approved && (
+              <h2 className="text-xl mb-8 bg-gray-50 py-4 pl-4 rounded-lg shadow-md flex flex-col text-gray-600 font-semibold tracking-wide uppercase">
+                NEED APPROVAL
+                <Link
+                  to="/dashboard/blogs"
+                  className="underline flex items-center gap-2 hover:decoration-wavy text-sky-500 hover:text-sky-600"
+                >
+                  Approve <BsArrowRight />
+                </Link>
+              </h2>
+            )}
             <h2 className="text-sm text-gray-600 font-semibold tracking-wide uppercase">
               {blog.createdAt?.slice(0, 10)}
             </h2>

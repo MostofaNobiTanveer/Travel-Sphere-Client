@@ -31,7 +31,7 @@ const useAuth = () => {
   const sendVerificationEmail = async (email) => {
     setIsLoading(true);
     const actionCodeSettings = {
-      url: 'http://localhost:3000/user/register/complete',
+      url: 'https://travel-sphere-magazine.web.app/user/register/complete',
       handleCodeInApp: true,
     };
     await sendSignInLinkToEmail(auth, email, actionCodeSettings)
