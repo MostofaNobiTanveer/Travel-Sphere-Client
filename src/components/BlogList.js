@@ -2,21 +2,20 @@ import React from 'react';
 import { useBlogContext } from '../contexts/BlogProvider';
 import { Link } from 'react-router-dom';
 
-const Content = () => {
+const BlogList = ({ title, count }) => {
   const { isLoading, blogs } = useBlogContext();
   return (
-    <section className="relative">
+    <div className="relative">
       {isLoading && (
         <div className="absolute z-50 inset-0 bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"></div>
       )}
-      <div className="max-w-2xl mx-auto pb-16 px-4 sm:py-20 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-4xl font-bold fill-white text-gray-900">
-          Latest Blogs
-        </h2>
+      <div className="mx-auto pb-16 px-4 sm:py-8 sm:px-6 w-full lg:px-8">
+        <h2 className="text-4xl font-bold fill-white text-gray-900">{title}</h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 xl:gap-x-8">
           {blogs
             .filter((blog) => blog.approved)
+            .slice(0, count)
             .map((blog) => {
               return (
                 <Link
@@ -48,8 +47,8 @@ const Content = () => {
             })}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Content;
+export default BlogList;

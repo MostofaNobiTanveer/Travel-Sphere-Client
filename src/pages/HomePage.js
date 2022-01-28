@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Feature, Hero } from '../components';
+import { Feature, FeatureBlogs, Hero } from '../components';
 import ScrollToTop from '../utils/ScrollToTop';
 
 const HomePage = () => {
@@ -8,7 +8,7 @@ const HomePage = () => {
       <ScrollToTop />
       <Hero />
       <Feature />
-      <Content />
+      <FeatureBlogs />
     </>
   );
 };

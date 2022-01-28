@@ -8,3 +8,4 @@ export { default as Dashboard } from './dashboard/Dashboard';
 export { default as DashboardHome } from './dashboard/Home';
 export { default as DashboardUsers } from './dashboard/Users';
 export { default as DashboardBlogs } from './dashboard/Blogs';
+export { default as AllBlogsPage } from './AllBlogsPage';

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Footer, Header } from './components';
 import {
   AddBlogPage,
+  AllBlogsPage,
   CompleteRegister,
   Dashboard,
   HomePage,
@@ -24,6 +25,7 @@ function App() {
         <Route path="user/register" element={<RegisterPage />} />
         <Route path="user/register/complete" element={<CompleteRegister />} />
         <Route path="new/blog" element={<AddBlogPage />} />
+        <Route path="blogs" element={<AllBlogsPage />} />
         <Route
           path="blogs/:id"
           element={
